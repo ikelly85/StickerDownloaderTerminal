@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D52D3B824C427FCF8A4C71B /* libPods-StickerDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3D770B9DABEBDD9D74D4E8 /* libPods-StickerDownloader.a */; };
+		A20FE8C71E2729A600ECBAA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8C61E2729A600ECBAA8 /* main.m */; };
+		A20FE8D41E27458800ECBAA8 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8D01E27458800ECBAA8 /* CommonUtil.m */; };
+		A20FE8D51E27458800ECBAA8 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8D31E27458800ECBAA8 /* StringUtils.m */; };
+		A20FE8E01E27459B00ECBAA8 /* ContentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8D71E27459B00ECBAA8 /* ContentsModel.m */; };
+		A20FE8E11E27459B00ECBAA8 /* ExportPacks.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8D91E27459B00ECBAA8 /* ExportPacks.m */; };
+		A20FE8E21E27459B00ECBAA8 /* ExportStickers.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8DB1E27459B00ECBAA8 /* ExportStickers.m */; };
+		A20FE8E31E27459B00ECBAA8 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8DD1E27459B00ECBAA8 /* Post.m */; };
+		A20FE8E41E27459B00ECBAA8 /* PostSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8DF1E27459B00ECBAA8 /* PostSticker.m */; };
+		A20FE8EB1E2745B000ECBAA8 /* AbstractWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8E61E2745B000ECBAA8 /* AbstractWorker.m */; };
+		A20FE8EC1E2745B000ECBAA8 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8E81E2745B000ECBAA8 /* AFAppDotNetAPIClient.m */; };
+		A20FE8ED1E2745B000ECBAA8 /* ThumbnailWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8EA1E2745B000ECBAA8 /* ThumbnailWorker.m */; };
+		A20FE8F01E27460600ECBAA8 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8EF1E27460600ECBAA8 /* Application.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A20FE8C11E2729A600ECBAA8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B3D770B9DABEBDD9D74D4E8 /* libPods-StickerDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20FE8C31E2729A600ECBAA8 /* StickerDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StickerDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20FE8C61E2729A600ECBAA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A20FE8CF1E27458800ECBAA8 /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		A20FE8D01E27458800ECBAA8 /* CommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
+		A20FE8D11E27458800ECBAA8 /* ObjectiveCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCUtil.h; sourceTree = "<group>"; };
+		A20FE8D21E27458800ECBAA8 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		A20FE8D31E27458800ECBAA8 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		A20FE8D61E27459B00ECBAA8 /* ContentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsModel.h; sourceTree = "<group>"; };
+		A20FE8D71E27459B00ECBAA8 /* ContentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsModel.m; sourceTree = "<group>"; };
+		A20FE8D81E27459B00ECBAA8 /* ExportPacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportPacks.h; sourceTree = "<group>"; };
+		A20FE8D91E27459B00ECBAA8 /* ExportPacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportPacks.m; sourceTree = "<group>"; };
+		A20FE8DA1E27459B00ECBAA8 /* ExportStickers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportStickers.h; sourceTree = "<group>"; };
+		A20FE8DB1E27459B00ECBAA8 /* ExportStickers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportStickers.m; sourceTree = "<group>"; };
+		A20FE8DC1E27459B00ECBAA8 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		A20FE8DD1E27459B00ECBAA8 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		A20FE8DE1E27459B00ECBAA8 /* PostSticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostSticker.h; sourceTree = "<group>"; };
+		A20FE8DF1E27459B00ECBAA8 /* PostSticker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostSticker.m; sourceTree = "<group>"; };
+		A20FE8E51E2745B000ECBAA8 /* AbstractWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractWorker.h; sourceTree = "<group>"; };
+		A20FE8E61E2745B000ECBAA8 /* AbstractWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractWorker.m; sourceTree = "<group>"; };
+		A20FE8E71E2745B000ECBAA8 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		A20FE8E81E2745B000ECBAA8 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		A20FE8E91E2745B000ECBAA8 /* ThumbnailWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailWorker.h; sourceTree = "<group>"; };
+		A20FE8EA1E2745B000ECBAA8 /* ThumbnailWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailWorker.m; sourceTree = "<group>"; };
+		A20FE8EE1E27460600ECBAA8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		A20FE8EF1E27460600ECBAA8 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		B787184FB098746C50390C06 /* Pods-StickerDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerDownloader/Pods-StickerDownloader.debug.xcconfig"; sourceTree = "<group>"; };
+		B8CAAC0DF943A005584A4E9D /* Pods-StickerDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerDownloader/Pods-StickerDownloader.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A20FE8C01E2729A600ECBAA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D52D3B824C427FCF8A4C71B /* libPods-StickerDownloader.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8917C1A367DDF210CA70FD05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B787184FB098746C50390C06 /* Pods-StickerDownloader.debug.xcconfig */,
+				B8CAAC0DF943A005584A4E9D /* Pods-StickerDownloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A20FE8BA1E2729A600ECBAA8 = {
+			isa = PBXGroup;
+			children = (
+				A20FE8C51E2729A600ECBAA8 /* StickerDownloader */,
+				A20FE8C41E2729A600ECBAA8 /* Products */,
+				8917C1A367DDF210CA70FD05 /* Pods */,
+				B9A1C5D2F306CBA0CC1CA74B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A20FE8C41E2729A600ECBAA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20FE8C31E2729A600ECBAA8 /* StickerDownloader */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A20FE8C51E2729A600ECBAA8 /* StickerDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				A20FE8E51E2745B000ECBAA8 /* AbstractWorker.h */,
+				A20FE8E61E2745B000ECBAA8 /* AbstractWorker.m */,
+				A20FE8E71E2745B000ECBAA8 /* AFAppDotNetAPIClient.h */,
+				A20FE8E81E2745B000ECBAA8 /* AFAppDotNetAPIClient.m */,
+				A20FE8E91E2745B000ECBAA8 /* ThumbnailWorker.h */,
+				A20FE8EA1E2745B000ECBAA8 /* ThumbnailWorker.m */,
+				A20FE8CE1E27455500ECBAA8 /* model */,
+				A20FE8CD1E27453800ECBAA8 /* util */,
+				A20FE8C61E2729A600ECBAA8 /* main.m */,
+				A20FE8EE1E27460600ECBAA8 /* Application.h */,
+				A20FE8EF1E27460600ECBAA8 /* Application.m */,
+			);
+			path = StickerDownloader;
+			sourceTree = "<group>";
+		};
+		A20FE8CD1E27453800ECBAA8 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				A20FE8CF1E27458800ECBAA8 /* CommonUtil.h */,
+				A20FE8D01E27458800ECBAA8 /* CommonUtil.m */,
+				A20FE8D11E27458800ECBAA8 /* ObjectiveCUtil.h */,
+				A20FE8D21E27458800ECBAA8 /* StringUtils.h */,
+				A20FE8D31E27458800ECBAA8 /* StringUtils.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		A20FE8CE1E27455500ECBAA8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A20FE8D61E27459B00ECBAA8 /* ContentsModel.h */,
+				A20FE8D71E27459B00ECBAA8 /* ContentsModel.m */,
+				A20FE8D81E27459B00ECBAA8 /* ExportPacks.h */,
+				A20FE8D91E27459B00ECBAA8 /* ExportPacks.m */,
+				A20FE8DA1E27459B00ECBAA8 /* ExportStickers.h */,
+				A20FE8DB1E27459B00ECBAA8 /* ExportStickers.m */,
+				A20FE8DC1E27459B00ECBAA8 /* Post.h */,
+				A20FE8DD1E27459B00ECBAA8 /* Post.m */,
+				A20FE8DE1E27459B00ECBAA8 /* PostSticker.h */,
+				A20FE8DF1E27459B00ECBAA8 /* PostSticker.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B9A1C5D2F306CBA0CC1CA74B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B3D770B9DABEBDD9D74D4E8 /* libPods-StickerDownloader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A20FE8C21E2729A600ECBAA8 /* StickerDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20FE8CA1E2729A600ECBAA8 /* Build configuration list for PBXNativeTarget "StickerDownloader" */;
+			buildPhases = (
+				0815ADC45FEBC7D58515768B /* [CP] Check Pods Manifest.lock */,
+				A20FE8BF1E2729A600ECBAA8 /* Sources */,
+				A20FE8C01E2729A600ECBAA8 /* Frameworks */,
+				A20FE8C11E2729A600ECBAA8 /* CopyFiles */,
+				6758A7F26B178CED569C4607 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickerDownloader;
+			productName = StickerDownloader;
+			productReference = A20FE8C31E2729A600ECBAA8 /* StickerDownloader */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A20FE8BB1E2729A600ECBAA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SNOW;
+				TargetAttributes = {
+					A20FE8C21E2729A600ECBAA8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 667RXQA956;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A20FE8BE1E2729A600ECBAA8 /* Build configuration list for PBXProject "StickerDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A20FE8BA1E2729A600ECBAA8;
+			productRefGroup = A20FE8C41E2729A600ECBAA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A20FE8C21E2729A600ECBAA8 /* StickerDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0815ADC45FEBC7D58515768B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6758A7F26B178CED569C4607 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickerDownloader/Pods-StickerDownloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A20FE8BF1E2729A600ECBAA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20FE8F01E27460600ECBAA8 /* Application.m in Sources */,
+				A20FE8D41E27458800ECBAA8 /* CommonUtil.m in Sources */,
+				A20FE8E21E27459B00ECBAA8 /* ExportStickers.m in Sources */,
+				A20FE8E11E27459B00ECBAA8 /* ExportPacks.m in Sources */,
+				A20FE8E41E27459B00ECBAA8 /* PostSticker.m in Sources */,
+				A20FE8ED1E2745B000ECBAA8 /* ThumbnailWorker.m in Sources */,
+				A20FE8E01E27459B00ECBAA8 /* ContentsModel.m in Sources */,
+				A20FE8D51E27458800ECBAA8 /* StringUtils.m in Sources */,
+				A20FE8C71E2729A600ECBAA8 /* main.m in Sources */,
+				A20FE8EB1E2745B000ECBAA8 /* AbstractWorker.m in Sources */,
+				A20FE8EC1E2745B000ECBAA8 /* AFAppDotNetAPIClient.m in Sources */,
+				A20FE8E31E27459B00ECBAA8 /* Post.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A20FE8C81E2729A600ECBAA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A20FE8C91E2729A600ECBAA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A20FE8CB1E2729A600ECBAA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B787184FB098746C50390C06 /* Pods-StickerDownloader.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 667RXQA956;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A20FE8CC1E2729A600ECBAA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8CAAC0DF943A005584A4E9D /* Pods-StickerDownloader.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 667RXQA956;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A20FE8BE1E2729A600ECBAA8 /* Build configuration list for PBXProject "StickerDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20FE8C81E2729A600ECBAA8 /* Debug */,
+				A20FE8C91E2729A600ECBAA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20FE8CA1E2729A600ECBAA8 /* Build configuration list for PBXNativeTarget "StickerDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20FE8CB1E2729A600ECBAA8 /* Debug */,
+				A20FE8CC1E2729A600ECBAA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A20FE8BB1E2729A600ECBAA8 /* Project object */;
+}
