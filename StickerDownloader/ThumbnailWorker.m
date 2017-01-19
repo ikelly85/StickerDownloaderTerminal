@@ -13,6 +13,7 @@
 #import "PostSticker.h"
 #import "StringUtils.h"
 #import "Application.h"
+#import "SnowQueue.h"
 
 @implementation ThumbnailWorker
 
@@ -45,46 +46,42 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
 
 - (BOOL)processJob
 {
-    if ([CommonUtil isNotEmptyMap:thumbnailUrlMap]) {
-        return NO;
-    }
-    if (!session) {
-        session = [self URLsession];
+    __block BOOL find = NO;
+    
+    dispatch_sync([SnowQueue getSerialQueue], ^{
+        if ([CommonUtil isEmptyMap:thumbnailUrlMap]) {
+            if (!session) {
+                session = [self URLsession];
+            }
+            
+            thumbnailUrlMap = [NSMutableDictionary dictionary];
+            
+            NSMutableArray *thumbnailList = [NSMutableArray array];
+            for (Post *post in [[Application sharedInstance] getPackDownloads]) {
+                if ([StringUtils isNotEmpty:post.thumbnailOn]) {
+                    [thumbnailList addObject:post.thumbnailOn];
+                }
+            }
+            [self setThumbnailUrlMapOn:thumbnailList];
+            
+            [thumbnailList removeAllObjects];
+            for (PostSticker *postSticker in [[Application sharedInstance] getItemDownloads]) {
+                if ([StringUtils isNotEmpty:postSticker.thumbnail]) {
+                    [thumbnailList addObject:postSticker.thumbnail];
+                }
+            }
+            [self setThumbnailUrlMapOn:thumbnailList];
+            
+            if ([CommonUtil isNotEmptyMap:thumbnailUrlMap]) {
+                find = YES;
+            }
+        }
+    });
+    
+    if (find) {
+        [self download];
     }
     
-    thumbnailUrlMap = [NSMutableDictionary dictionary];
-
-    NSMutableArray *thumbnailList = [NSMutableArray array];
-    for (Post *post in [[Application sharedInstance] getPackDownloads]) {
-        if ([StringUtils isNotEmpty:post.thumbnailOn]) {
-            [thumbnailList addObject:post.thumbnailOn];
-        }
-    }
-    [self setThumbnailUrlMapOn:thumbnailList];
-    
-    [thumbnailList removeAllObjects];
-    for (PostSticker *postSticker in [[Application sharedInstance] getItemDownloads]) {
-        if ([StringUtils isNotEmpty:postSticker.thumbnail]) {
-            [thumbnailList addObject:postSticker.thumbnail];
-        }
-    }
-    [self setThumbnailUrlMapOn:thumbnailList];
-    
-    if ([CommonUtil isEmptyMap:thumbnailUrlMap]) {
-        return NO;
-    }
-
-    NSInteger i = 0;
-    NSInteger totalCount = [thumbnailUrlMap count];
-    @synchronized (thumbnailUrlMap) {
-        for (NSString *thumbnailPath in[thumbnailUrlMap keyEnumerator]) {
-            NSInteger index = [[thumbnailUrlMap objectForKey:thumbnailPath] integerValue];
-            NSString *saveImagePath = [self makePath:thumbnailPath index:index];
-            [self downloadURL:thumbnailPath toPath:saveImagePath isLast:(i == totalCount - 1) index:index];
-            i++;
-        }
-        [thumbnailUrlMap removeAllObjects];
-    }
     return NO;
 }
 
@@ -114,8 +111,17 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
     return _session;
 }
 
-- (NSProgress *)downloadURL:(NSString *)serverPath toPath:(NSString *)path isLast:(BOOL)isLast index:(NSInteger)index
+- (void)download
 {
+    __block NSString *serverPath = nil;
+    __block NSInteger index = -1;
+    
+    dispatch_sync([SnowQueue getSerialQueue], ^{
+        serverPath = [[thumbnailUrlMap allKeys] firstObject];
+        index = [[thumbnailUrlMap objectForKey:serverPath] integerValue];
+        [thumbnailUrlMap removeObjectForKey:serverPath];
+    });
+    
     NSURL *url = nil;
     if ([serverPath hasPrefix:@"http"]) {
         url = [NSURL URLWithString:serverPath];
@@ -132,10 +138,15 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-    NSProgress *progress;
     NSURLSessionDownloadTask *downloadTask;
 
     downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                        __block BOOL isLast = NO;
+                        
+                        dispatch_sync([SnowQueue getSerialQueue], ^{
+                            isLast = (thumbnailUrlMap.count == 0);
+                        });
+        
                         if (error) {
                             [self onFailureImage:error];
                         } else {
@@ -144,13 +155,15 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
                                 session = nil;
                             }
                         }
+        
+                        if (!isLast) {
+                            [self download];
+                        }
                     }];
 
 
     downloadTask.priority = 0.0f;//NSURLSessionTaskPriorityLow;
     [downloadTask resume];
-
-    return progress;
 }
 
 - (void)onSucceessImage:(NSString *)localFilePath serverPath:(NSString *)serverPath isLast:(BOOL)isLast index:(NSInteger)index

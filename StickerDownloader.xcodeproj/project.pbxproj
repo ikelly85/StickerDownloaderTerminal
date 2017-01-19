@@ -20,6 +20,8 @@
 		A20FE8EC1E2745B000ECBAA8 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8E81E2745B000ECBAA8 /* AFAppDotNetAPIClient.m */; };
 		A20FE8ED1E2745B000ECBAA8 /* ThumbnailWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8EA1E2745B000ECBAA8 /* ThumbnailWorker.m */; };
 		A20FE8F01E27460600ECBAA8 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = A20FE8EF1E27460600ECBAA8 /* Application.m */; };
+		A28178421E30A49D00B1EE9D /* SnowQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A28178411E30A49D00B1EE9D /* SnowQueue.m */; };
+		A28178451E30A4DD00B1EE9D /* NSDictionary+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A28178441E30A4DD00B1EE9D /* NSDictionary+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +63,10 @@
 		A20FE8EA1E2745B000ECBAA8 /* ThumbnailWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailWorker.m; sourceTree = "<group>"; };
 		A20FE8EE1E27460600ECBAA8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		A20FE8EF1E27460600ECBAA8 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		A28178401E30A49D00B1EE9D /* SnowQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowQueue.h; sourceTree = "<group>"; };
+		A28178411E30A49D00B1EE9D /* SnowQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowQueue.m; sourceTree = "<group>"; };
+		A28178431E30A4DD00B1EE9D /* NSDictionary+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Addition.h"; sourceTree = "<group>"; };
+		A28178441E30A4DD00B1EE9D /* NSDictionary+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Addition.m"; sourceTree = "<group>"; };
 		B787184FB098746C50390C06 /* Pods-StickerDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerDownloader/Pods-StickerDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		B8CAAC0DF943A005584A4E9D /* Pods-StickerDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerDownloader/Pods-StickerDownloader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +131,10 @@
 		A20FE8CD1E27453800ECBAA8 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				A28178431E30A4DD00B1EE9D /* NSDictionary+Addition.h */,
+				A28178441E30A4DD00B1EE9D /* NSDictionary+Addition.m */,
+				A28178401E30A49D00B1EE9D /* SnowQueue.h */,
+				A28178411E30A49D00B1EE9D /* SnowQueue.m */,
 				A20FE8CF1E27458800ECBAA8 /* CommonUtil.h */,
 				A20FE8D01E27458800ECBAA8 /* CommonUtil.m */,
 				A20FE8D11E27458800ECBAA8 /* ObjectiveCUtil.h */,
@@ -252,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28178451E30A4DD00B1EE9D /* NSDictionary+Addition.m in Sources */,
 				A20FE8F01E27460600ECBAA8 /* Application.m in Sources */,
 				A20FE8D41E27458800ECBAA8 /* CommonUtil.m in Sources */,
 				A20FE8E21E27459B00ECBAA8 /* ExportStickers.m in Sources */,
@@ -264,6 +275,7 @@
 				A20FE8EB1E2745B000ECBAA8 /* AbstractWorker.m in Sources */,
 				A20FE8EC1E2745B000ECBAA8 /* AFAppDotNetAPIClient.m in Sources */,
 				A20FE8E31E27459B00ECBAA8 /* Post.m in Sources */,
+				A28178421E30A49D00B1EE9D /* SnowQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
