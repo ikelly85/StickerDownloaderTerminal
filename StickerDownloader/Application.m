@@ -99,6 +99,12 @@ SYNTHESIZE_SINGLETON_CLASS(Application, sharedInstance);
 - (void)cleansing
 {
     NSString *applicationPath = [[NSBundle mainBundle] bundlePath];
+    
+    NSString *jsonResourcePath = [applicationPath stringByAppendingPathComponent:@"Resources/postSticker"];
+    
+    [fileManager removeItemAtPath:jsonResourcePath error:nil];
+    [fileManager createDirectoryAtPath:jsonResourcePath withIntermediateDirectories:NO attributes:nil error:nil];
+    
     NSString *assetPath = [applicationPath stringByAppendingPathComponent:@"Images.xcassets/post_stickers"];
     
     [fileManager removeItemAtPath:assetPath error:nil];
@@ -211,9 +217,11 @@ SYNTHESIZE_SINGLETON_CLASS(Application, sharedInstance);
     NSString *fileNamePath = [NSString stringWithFormat:@"postSticker/%@.json", fileName];
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileNamePath];
     
-    if (![fileManager fileExistsAtPath:fileAtPath]) {
-        [fileManager createFileAtPath:fileAtPath contents:nil attributes:nil];
+    if ([fileManager fileExistsAtPath:fileAtPath]) {
+        [fileManager removeItemAtPath:fileAtPath error:nil];
     }
+    
+    [fileManager createFileAtPath:fileAtPath contents:nil attributes:nil];
     
     // The main act...
     [[jsonString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
