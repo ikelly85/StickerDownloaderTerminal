@@ -126,15 +126,23 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
     if ([serverPath hasPrefix:@"http"]) {
         url = [NSURL URLWithString:serverPath];
     } else {
-        NSString *baseServerPath = @"http://dev-gw.snow.me";
+        NSString *baseServerPath = @"http://dev-fs.snow.me";
         if ([[[NSProcessInfo processInfo] arguments] containsObject:@"dev"]) {
-            baseServerPath = @"http://dev-gw.snow.me";
+            baseServerPath = @"http://dev-fs.snow.me";
         } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"test"]) {
-           baseServerPath = @"http://qa-gw.snow.me";
+           baseServerPath = @"http://qa-fs.snow.me";
         } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"stage"] || [[[NSProcessInfo processInfo] arguments] containsObject:@"real"]) {
-            baseServerPath = @"http://gw.snow.me";
+            baseServerPath = @"http://kr-fs.snow.me";
         }
-        url = [NSURL URLWithString:[baseServerPath stringByAppendingPathComponent:serverPath]];
+        
+        NSMutableString *serverFullUrl = [NSMutableString stringWithString:baseServerPath];
+        if ([serverPath hasPrefix:@"/"]) {
+            [serverFullUrl appendString:serverPath];
+        } else {
+            [serverFullUrl appendFormat:@"/%@", serverPath];
+        }
+        
+        url = [NSURL URLWithString:serverFullUrl];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
