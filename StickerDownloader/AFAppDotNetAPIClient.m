@@ -32,7 +32,7 @@ static NSString *AFAppDotNetAPIBaseURLString = @"http://dev.admin.snow.me/api/st
     dispatch_once(&onceToken, ^{
         if ([[[NSProcessInfo processInfo] arguments] containsObject:@"dev"]) {
             AFAppDotNetAPIBaseURLString = @"http://dev.admin.snow.me/api/sticker/";
-        } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"qa"]) {
+        } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"test"]) {
             AFAppDotNetAPIBaseURLString = @"http://qa.admin.snow.me/api/sticker/";
         } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"stage"] || [[[NSProcessInfo processInfo] arguments] containsObject:@"real"]) {
             AFAppDotNetAPIBaseURLString = @"http://admin.snow.me/api/sticker/";

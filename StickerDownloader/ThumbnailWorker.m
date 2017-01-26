@@ -129,7 +129,7 @@ SYNTHESIZE_SINGLETON_CLASS(ThumbnailWorker, sharedInstance);
         NSString *baseServerPath = @"http://dev-gw.snow.me";
         if ([[[NSProcessInfo processInfo] arguments] containsObject:@"dev"]) {
             baseServerPath = @"http://dev-gw.snow.me";
-        } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"qa"]) {
+        } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"test"]) {
            baseServerPath = @"http://qa-gw.snow.me";
         } else if ([[[NSProcessInfo processInfo] arguments] containsObject:@"stage"] || [[[NSProcessInfo processInfo] arguments] containsObject:@"real"]) {
             baseServerPath = @"http://gw.snow.me";
